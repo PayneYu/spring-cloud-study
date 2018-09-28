@@ -12,6 +12,7 @@
     <modules>
         <module>registry-server</module>
         <module>eureka-client</module>
+        <module>ribbon-consumer</module>
     </modules>
 
     <parent>
