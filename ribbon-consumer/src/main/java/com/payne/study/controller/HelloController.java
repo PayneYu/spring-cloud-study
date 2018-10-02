@@ -3,6 +3,7 @@ package com.payne.study.controller;
 import com.payne.study.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,8 @@ public class HelloController {
     @Autowired
     HelloService helloService;
 
-    @GetMapping(value = "/hi")
-    public String hi() {
-        return helloService.hiService();
+    @GetMapping(value = "/hi/{name}")
+    public String hi(@PathVariable String name) {
+        return helloService.hiService(name);
     }
 }
