@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author: Huizhe Yu
  * @create: 2018-09-28 22:04
  */
-@FeignClient(value = "eureka-client",fallback = FallBackHelloService.class)
+//@FeignClient(value = "eureka-client",fallback = FallBackHelloService.class)
+@FeignClient(value = "eureka-client",fallbackFactory = ClientFallBackFactory.class)
 public interface HelloService {
 
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
